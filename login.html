@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            min-height: 100vh;
+            background: url('fon.jpg') center/cover no-repeat fixed;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .login-bg {
+            background: transparent;
+            min-height: 400px;          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;           
+            margin-bottom: 10px;        
+        }
+        .login-form {
+            position: relative;
+            z-index: 2;
+            background: white;
+            padding: 30px;              
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-form h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .login-form .block {
+            margin-bottom: 5px;          
+        }
+        .login-form .label {
+            display: block;
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            background: #fafafa;
+        }
+        .login-form input:focus {
+            outline: none;
+            border-color: #e74c3c;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .checkbox-item input {
+            accent-color: #e74c3c;
+            cursor: pointer;
+        }
+    </style>
+</head> 
+<body>
+    <header>
+        <h1> Food Construct</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="feedback.html">Обратная связь</a>
+            <a href="login.html">Войти</a>
+            <a href="#">Собрать ланч</a>
+            <a href="#">Заказы</a>
+            <a href="#footer">Контакты</a> 
+        </nav>
+    </header>
+    <main>
+        <section class="login-bg">
+            <form action="https://httpbin.org/post" method="post" class="login-form">
+                <h2>Вход</h2>
+                <div class="block">
+                    <label class="label" for="Login">Логин</label>
+                    <input type="text" id="Login" name="Login" placeholder="Введите логин" required>
+                </div>
+                <div class="block">
+                    <label class="label" for="Password">Пароль</label>
+                    <input type="password" id="Password" name="Password" placeholder="Введите пароль" required>
+                </div>
+                <input type="hidden" name="remember" value="no">
+                <label class="checkbox-item">
+                    <input type="checkbox" name="remember" value="yes">
+                    Запомнить меня
+                </label>
+                <button type="submit">Войти</button>
+            </form>
+        </section>
+    </main>
+    <footer id="footer">
+        <p> Телефон: +7 (123) 456-78-90</p>
+        <p> Email: <a href="mailto:food@construct.ru">food@construct.ru</a></p>
+        <p> Адрес: Москва, ул. Тверская, 15</p>
+    </footer>
+</body>
+</html>

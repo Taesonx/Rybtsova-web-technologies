@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратная связь</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    * {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    }
+    form {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .head {
+        margin-bottom: 15px;
+    }
+    .block{
+        margin-bottom: 10px;
+    }
+    .label{
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+    </style>
+    
+    <header>
+        <h1> Food Construct</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="feedback.html">Обратная связь</a>
+            <a href="login.html">Войти</a>
+            <a href="#">Собрать ланч</a>
+            <a href="#">Заказы</a>
+            <a href="#footer">Контакты</a> 
+        </nav>
+    </header>
+</head> 
+<body>
+    <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+        <div>
+            <h1 class="head">Форма обратной связи</h1>
+        </div>
+        <div class="block">
+            <label class="label" for="FullName">ФИО</label>
+            <input type="text" id="FullName" name="FullName" required>
+        </div>
+        <div class="block">
+            <label class="label" for="Email">Адрес электронной почты</label>
+            <input type="text" id="Email" name="Email" placeholder="Введите Email" required>
+        </div>
+        <div class="block">
+            <label class="label">Откуда вы узнали о нас?</label>
+            <input type="radio" id="Friends" name="radio" value="Friends"><label for="Friends">Рассказали друзья</label>
+            <input type="radio" id="Adver" name="radio" value="Advertisement"><label for="Adver">Реклама в интернете</label>
+            <input type="radio" id="Other" name="radio" value="Other"><label for="Other">Другое</label>
+        </div>
+        <div class="block">
+            <label class="label" for="Category">Категория обращения</label>
+            <select id="Type" name="Type">
+                <option value="auto" selected></option>
+                <option value="complaint">Жалоба</option>
+                <option value="suggestion">Предложение</option>
+            </select>
+        </div>
+        <div class="block">
+            <label class="label" for="Message">Текст сообщения</label>
+            <textarea id="Message" name="Message" rows="10" placeholder="Опишите вашу жалобу или предложение"></textarea required>
+        </div>
+        <div class="block">
+            <label class="label" for="File">Вложение</label>
+            <input type="file" id="File" name="File">
+        </div>
+        <div class="block">
+            <input type="checkbox" id="checkbox" name="agreement" value="yes" required>
+            <label class="checkbox">Даю согласие на обработку персональных данных</label>
+        </div>
+        <button type="submit">Отправить</button>
+    </form> 
+    <footer id="footer">
+        <p> Телефон: +7 (123) 456-78-90</p>
+        <p> Email: <a href="mailto:food@construct.ru">food@construct.ru</a></p>
+        <p> Адрес: Москва, ул. Тверская, 15</p>
+    </footer>    
+</body>
+</html>

@@ -1,0 +1,35 @@
+@media print {
+    nav,
+    button,
+    .dish button {
+        display: none !important;
+    }
+    * {
+        box-shadow: none !important;
+        filter: none !important;
+        background: white !important;
+        color: black !important;
+    }
+    .dishes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .dish {
+        border: 1px solid #ccc !important;
+        border-radius: 0 !important;
+        page-break-inside: avoid;
+        padding: 10px !important;
+    }
+    .dish img {
+        border-radius: 0 !important;
+    }
+    body { font-size: 12pt; }
+    h1 { font-size: 20pt; }
+    h2 { font-size: 16pt; }
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        color: #555;
+    }
+}

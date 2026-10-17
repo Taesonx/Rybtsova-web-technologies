@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Construct - Собрать ланч</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lunch.css">
+    <link rel="stylesheet" href="print.css" media="print">
+</head> 
+<body>
+    <header>
+        <h1> Food Construct</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="feedback.html">Обратная связь</a>
+            <a href="login.html">Войти</a>
+            <a href="lunch.html">Собрать ланч</a>
+            <a href="#">Заказы</a>
+            <a href="#footer">Контакты</a> 
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Супы</h2>
+            <div class="dishes" data-category="soup">
+            </div>
+        </section>
+
+        <section>
+            <h2>Главные блюда</h2>
+            <div class="dishes" data-category="main">
+            </div>
+        </section>
+
+        <section>
+            <h2>Напитки</h2>
+            <div class="dishes" data-category="drink">
+            </div>
+        </section>
+    </main>
+
+    <section class="order-section">
+        <h2 class="order-title">Сделать заказ</h2>
+        <form action="https://httpbin.org/post" method="post" class="order-form">
+            <div class="order-grid">
+
+                <div class="order-col">
+                    <h3>Ваш заказ</h3>
+
+                    <p id="nothing-selected" class="nothing-selected">Ничего не выбрано</p>
+
+                    <div id="order-details" style="display: none;">
+                        <div class="block">
+                            <label class="label">Суп</label>
+                            <p id="selected-soup" class="selected-dish">Блюдо не выбрано</p>
+                            <input type="hidden" name="soup" id="soup-keyword" value="">
+                        </div>
+                        <div class="block">
+                            <label class="label">Главное блюдо</label>
+                            <p id="selected-main" class="selected-dish">Блюдо не выбрано</p>
+                            <input type="hidden" name="main" id="main-keyword" value="">
+                        </div>
+                        <div class="block">
+                            <label class="label">Напиток</label>
+                            <p id="selected-drink" class="selected-dish">Напиток не выбран</p>
+                            <input type="hidden" name="drink" id="drink-keyword" value="">
+                        </div>
+
+                        <div class="block" id="cost-block" style="display: none;">
+                            <label class="label">Стоимость заказа</label>
+                            <p id="total-cost" class="total-cost">0₽</p>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <label class="label" for="order-comment">Комментарии к заказу</label>
+                        <textarea id="order-comment" name="comment" rows="5" placeholder="Пожелания к заказу..."></textarea>
+                    </div>
+                </div>
+
+                <div class="order-col">
+                    <h3>Ваши данные</h3>
+                    <div class="block">
+                        <label class="label" for="order-name">Имя</label>
+                        <input type="text" id="order-name" name="name" required>
+                    </div>
+                    <div class="block">
+                        <label class="label" for="order-email">Email</label>
+                        <input type="email" id="order-email" name="email" required>
+                    </div>
+                    <div class="block">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="newsletter" value="yes" checked>
+                            Получать информацию о скидках и акциях
+                        </label>
+                    </div>
+                    <div class="block">
+                        <label class="label" for="order-phone">Номер телефона</label>
+                        <input type="tel" id="order-phone" name="phone" required>
+                    </div>
+                    <div class="block">
+                        <label class="label" for="order-address">Адрес доставки</label>
+                        <input type="text" id="order-address" name="address" required>
+                        <small class="hint">Доставка осуществляется только по Москве</small>
+                    </div>
+                    <div class="block">
+                        <p class="label">Время доставки:</p>
+                        <label class="radio-item">
+                            <input type="radio" name="delivery_time" value="asap" checked>
+                            Как можно скорее
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="delivery_time" value="specific">
+                            К указанному времени
+                        </label>
+                    </div>
+                    <div class="block">
+                        <label class="label" for="order-time">Укажите время доставки</label>
+                        <input type="time" id="order-time" name="delivery_time_value">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="order-btn">Заказать</button>
+        </form>
+    </section>
+
+    <footer id="footer">
+        <p>Телефон: +7 (123) 456-78-90</p>
+        <p>Email: <a href="mailto:food@construct.ru">food@construct.ru</a></p>
+        <p>Адрес: Москва, ул. Тверская, 15</p>
+    </footer>
+
+    <template id="dish-template">
+        <div class="dish">
+            <img src="" alt="">
+            <p class="price"></p>
+            <p class="name"></p>
+            <p class="weight"></p>
+            <button type="button">Добавить</button>
+        </div>
+    </template>
+
+    <script src="dishes.js"></script>
+    <script src="display.js"></script>
+    <script src="order.js"></script>
+</body>
+</html>

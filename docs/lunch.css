@@ -216,3 +216,29 @@
     color: #2c3e50;
     margin-top: 5px;
 }
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.filter {
+    background: none;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 12px;
+    color: #1e8449;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.filter:hover {
+    background-color: #e8f6ee;
+}
+.filter.active {
+    background-color: #c8ecd5;
+}
+.dish.hidden {
+    display: none;
+}

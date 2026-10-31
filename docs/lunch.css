@@ -242,3 +242,97 @@
 .dish.hidden {
     display: none;
 }
+.combo-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.combos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 20px;
+}
+.combo {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+.combo-dish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.combo-dish img {
+    width: 56px;
+    height: 56px;
+    max-width: none;
+    margin-bottom: 6px;
+    border-radius: 0;
+    transition: transform 0.3s;
+}
+.combo-dish img:hover {
+    transform: translateY(-6px) scale(1.15);
+}
+.combo-dish p {
+    font-size: 16px;
+    line-height: 1.2;
+    color: #000;
+}
+.combo-dessert {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+.combo-dish .combo-note {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #555;
+}
+@media (max-width: 900px) {
+    .combos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .combos {
+        grid-template-columns: 1fr;
+    }
+}
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+.notification p {
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
+.notification button {
+    padding: 8px 28px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.notification button:hover {
+    background-color: tomato;
+    border-color: tomato;
+    color: white;
+}

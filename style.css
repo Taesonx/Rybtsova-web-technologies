@@ -1,0 +1,123 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f5f5f5f5;
+    color: hsl(0, 0%, 0%);
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+header {
+    background-color: white;
+    padding: 20px 40px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(135, 16, 16, 0.05); 
+}
+header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+nav {
+    display: flex;
+    gap: 25px;
+}
+nav a {
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s; 
+}
+nav a:hover {
+    color: #e74c3c;
+}
+section {
+    background-color: white;
+    padding: 30px 40px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.6;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+ul li {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    padding: 8px 0;
+    padding-left: 25px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23e74c3c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') left center no-repeat;
+    background-size: 16px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    text-align: left;
+}
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #f8f9fa;
+    font-weight: 700;
+    color: #2c3e50;
+}
+td {
+    color: #555;
+}
+footer {
+    background-color: black;
+    color: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    margin-top: 35px;
+}
+footer p {
+    color: white;
+    margin: 5px 0;
+    font-size: 15px;
+}
+footer a {
+    color: #ffccbc;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+}
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}

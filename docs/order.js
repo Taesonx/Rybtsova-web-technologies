@@ -21,7 +21,6 @@ function toggleDish(card) {
         .forEach(c => c.classList.remove('selected'));
     selected[category] = wasSelected ? null : dish.keyword;
     card.classList.toggle('selected', !wasSelected);
-
     updateOrderSummary();
 }
 function updateOrderSummary() {
@@ -29,25 +28,19 @@ function updateOrderSummary() {
     const detailsEl = document.getElementById('order-details');
     const costBlock = document.getElementById('cost-block');
     const totalEl = document.getElementById('total-cost');
-
     const hasAny = orderCategories.some(cat => selected[cat]);
-
     if (!hasAny) {
         nothingEl.style.display = 'block';
         detailsEl.style.display = 'none';
         costBlock.style.display = 'none';
         return;
     }
-
     nothingEl.style.display = 'none';
     detailsEl.style.display = 'block';
-
     let total = 0;
-
     orderCategories.forEach(cat => {
         const nameEl = document.getElementById(`selected-${cat}`);
         const hiddenInput = document.getElementById(`${cat}-keyword`);
-
         if (selected[cat]) {
             const dish = dishes.find(d => d.keyword === selected[cat]);
             nameEl.textContent = `${dish.name} ${dish.price}₽`;
@@ -58,7 +51,6 @@ function updateOrderSummary() {
             hiddenInput.value = '';
         }
     });
-
     if (total > 0) {
         costBlock.style.display = 'block';
         totalEl.textContent = `${total}₽`;
@@ -66,9 +58,8 @@ function updateOrderSummary() {
         costBlock.style.display = 'none';
     }
 }
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.dish').forEach(card => {
-        card.addEventListener('click', () => toggleDish(card));
-    });
-    updateOrderSummary();
+document.addEventListener('click', event => {
+    const card = event.target.closest('.dish');
+    if (card) toggleDish(card);
 });
+document.addEventListener('DOMContentLoaded', updateOrderSummary);

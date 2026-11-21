@@ -336,3 +336,40 @@
     border-color: tomato;
     color: white;
 }
+/* ===== Sticky-панель перехода к оформлению ===== */
+.order-panel {
+    position: sticky;
+    bottom: 20px;
+    margin: 40px auto 0;
+    max-width: 580px;
+    background: #2c3e50;
+    color: #fff;
+    padding: 18px 28px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+}
+
+.panel-link {
+    background: #e74c3c;
+    color: white;
+    padding: 11px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.panel-link:hover {
+    background: #c0392b;
+}
+
+.panel-link.disabled {
+    background: #7f8c8d;
+    pointer-events: none;
+    opacity: 0.75;
+    cursor: not-allowed;
+}
